@@ -27,7 +27,7 @@ import logging
 
 load_dotenv()
 config = dotenv_values(".env")
-
+# URL  = "https://sibisystems.com/Default.aspx?ReturnUrl=%2fSecurePages%2fDefault.aspx"
 # fix certificate error
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -38,11 +38,11 @@ web_url = config['URL']
 
 #TODO this needs to prompt for date..
 def set_date_range(start=None, end=None):
-    startdate = '12/1/2022'
-    enddate = '12/6/2022'
+    # startdate = '12/1/2022'
+    # enddate = '12/6/2022'
     if start ==None and end == None:
-        start = startdate#datetime.strftime(datetime.today() - timedelta(days=3), '%m/%d/%Y')
-        end = enddate#datetime.strftime(datetime.today(), '%m/%d/%Y')
+        start = datetime.strftime(datetime.today() - timedelta(days=3), '%m/%d/%Y')
+        end = datetime.strftime(datetime.today(), '%m/%d/%Y')
 
     else:
         start = input("Enter start date here: ")
